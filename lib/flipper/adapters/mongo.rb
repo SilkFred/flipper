@@ -127,7 +127,7 @@ module Flipper
       # Private
       def update(key, updates)
         options = { upsert: true }
-        @collection.find(_id: key.to_s).update_one(updates, options)
+        @collection.update({_id: key.to_s}, updates, options)
       end
 
       # Private
